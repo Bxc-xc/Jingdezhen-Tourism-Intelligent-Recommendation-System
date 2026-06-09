@@ -1,0 +1,22 @@
+{
+  "name": "tourism-recommendation-system",
+  "version": "1.0.0",
+  "description": "景德镇旅游智能推荐系统",
+  "scripts": {
+    "init-users": "node scripts/init-test-users.js",
+    "update-passwords": "node scripts/update-user-passwords.js",
+    "test-auth": "node tests/test-auth-system.js"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
+    "axios": "^1.12.2",
+    "bcrypt": "^5.1.1",
+    "html2canvas": "^1.4.1",
+    "leaflet": "^1.9.4",
+    "mysql2": "^3.6.0",
+    "nprogress": "^0.2.0",
+    "vuedraggable": "^4.1.0",
+    "ws": "^8.18.3",
+    "xlsx": "^0.18.5"
+  }
+}

@@ -1,0 +1,85 @@
+### 景德镇旅游智能推荐系统 API 测试
+
+### 1. 获取所有景点
+GET http://localhost:8889/api/scenic
+
+### 2. 获取景点详情
+GET http://localhost:8889/api/scenic/1
+
+### 3. 获取推荐景点
+GET http://localhost:8889/api/scenic/recommend
+
+### 4. 根据分类获取景点
+GET http://localhost:8889/api/scenic/category/博物馆
+
+### 5. 根据标签搜索景点
+GET http://localhost:8889/api/scenic/search/tag?tag=陶瓷
+
+### 6. 根据名称搜索景点
+GET http://localhost:8889/api/scenic/search/name?name=古窑
+
+### 7. 根据价格范围搜索景点
+GET http://localhost:8889/api/scenic/search/price?minPrice=0&maxPrice=50
+
+### 8. 用户注册
+POST http://localhost:8889/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "123456",
+  "role": "tourist",
+  "phone": "13800138888"
+}
+
+### 9. 用户登录
+POST http://localhost:8889/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "tourist1",
+  "password": "123456"
+}
+
+### 10. 获取所有用户
+GET http://localhost:8889/api/user
+
+### 11. 创建评论
+POST http://localhost:8889/api/review
+Content-Type: application/json
+
+{
+  "userId": 2,
+  "scenicSpotId": 1,
+  "content": "这是一个测试评论",
+  "rating": 5
+}
+
+### 12. 获取景点评论
+GET http://localhost:8889/api/review/scenic/1
+
+### 13. 创建订单
+POST http://localhost:8889/api/order
+Content-Type: application/json
+
+{
+  "userId": 2,
+  "merchantId": 1,
+  "scenicSpotId": 1
+}
+
+### 14. 获取用户订单
+GET http://localhost:8889/api/order/user/2
+
+### 15. 创建商家
+POST http://localhost:8889/api/merchant
+Content-Type: application/json
+
+{
+  "userId": 2,
+  "shopName": "测试店铺",
+  "description": "这是一个测试店铺"
+}
+
+### 16. 获取所有商家
+GET http://localhost:8889/api/merchant

@@ -1,0 +1,59 @@
+server:
+  port: 8888
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  application:
+    name: tourism-recommendation
+  
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/tourism?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf8}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+  
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
+      enabled: true
+
+# 文件上传配置
+file:
+  upload-dir: uploads/
+
+logging:
+  level:
+    com.jdz.tourism: DEBUG
+    org.springframework.web: DEBUG
+
+# 地图API配置
+map:
+  api:
+    # 是否启用真实地图API（false时使用降级方案）
+    enabled: false
+    # 地图服务提供商：amap（高德地图）或 baidu（百度地图）
+    provider: amap
+    # 地图API密钥（需要到对应地图服务商申请）
+    key: ${MAP_API_KEY:}
+
+dashboard:
+  # true: 返回高质量模拟数据；false: 聚合真实订单/用户/商家申请数据
+  use-mock: true
+
+jwt:
+  secret: ${JWT_SECRET:dev-only-change-me-please-dev-only-change-me-please}
+  expiration: ${JWT_EXPIRATION:86400000}
