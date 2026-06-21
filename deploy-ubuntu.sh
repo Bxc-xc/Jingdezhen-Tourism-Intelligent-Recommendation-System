@@ -2,7 +2,7 @@
 set -euo pipefail
 
 APP_DIR="/home/ubuntu/jingdezhen-tourism"
-REPO_URL="https://github.com/Bxc-xc/-B-S-.git"
+REPO_URL="https://github.com/Bxc-xc/Jingdezhen-Tourism-Intelligent-Recommendation-System.git"
 DB_NAME="tourism"
 DB_USER="tourism"
 
